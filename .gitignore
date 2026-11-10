@@ -1,0 +1,12 @@
+.DS_Store
+.env
+sentinel-api/.env
+sentinel-api/node_modules/
+sentinel-api/dist/
+sentinel-api/data/
+sentinel-api/prisma/*.db
+sentinel-api/prisma/*.db-journal
+
+# Xcode user state
+**/xcuserdata/
+.DS_Store
