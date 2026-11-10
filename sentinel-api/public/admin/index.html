@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentinel · Panel privado</title>
+  <link rel="stylesheet" href="/admin/styles.css">
+</head>
+<body>
+  <main id="loginView" class="auth-shell">
+    <section class="auth-card">
+      <div class="brand-mark">S</div>
+      <p class="eyebrow">SENTINEL API</p>
+      <h1>Panel privado</h1>
+      <p class="muted">Monitorea fuentes, reportes comunitarios y actividad de la plataforma.</p>
+      <form id="loginForm" class="stack">
+        <label>Usuario o correo<input id="email" type="text" autocomplete="username" required placeholder="admin"></label>
+        <label>Contraseña<input id="password" type="password" autocomplete="current-password" required placeholder="••••••••"></label>
+        <button class="primary" type="submit">Entrar al panel</button>
+        <p id="loginError" class="error" role="alert"></p>
+      </form>
+    </section>
+  </main>
+
+  <main id="appView" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark small">S</span><div><strong>Sentinel</strong><span>Control center</span></div></div>
+      <nav id="menu" class="menu">
+        <button data-section="dashboard" class="active"><span>⌂</span> Resumen</button>
+        <button data-section="users"><span>◉</span> Usuarios</button>
+        <button data-section="reports"><span>⚑</span> Reportes</button>
+        <button data-section="alerts"><span>⌁</span> Alertas oficiales</button>
+        <button data-section="assessments"><span>☷</span> Evaluaciones</button>
+        <button data-section="tests"><span>⚡</span> Pruebas</button>
+      </nav>
+      <div class="sidebar-footer"><span id="adminIdentity">Administrador</span><button id="logoutButton" class="ghost">Cerrar sesión</button></div>
+    </aside>
+    <section class="content">
+      <header class="topbar"><div><p class="eyebrow">CENTRO DE OPERACIONES</p><h2 id="sectionTitle">Resumen</h2></div><div class="top-actions"><span id="lastUpdated" class="muted"></span><button id="refreshButton" class="outline">Actualizar</button><button id="syncButton" class="primary compact">Sincronizar fuentes</button></div></header>
+      <div id="toast" class="toast" role="status"></div>
+      <section id="sectionContent"></section>
+    </section>
+  </main>
+  <script src="/admin/app.js" defer></script>
+</body>
+</html>
